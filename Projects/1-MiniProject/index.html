@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>1- Mini Project</title>
+        <link href="style.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=ADLaM Display' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Borel' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Belanosima' rel='stylesheet'>
+    </head>
+
+    <body>
+        <div id="LoaderContainer" class="Loader--hidden">
+            <div id="Loader"></div>
+        </div>
+
+        <div id="ClockSection">
+            <div id="ClockContainer">
+                <div id="Clock">Time left: 30</div>
+            </div>
+        </div>
+
+        <div class="Slide" id="MainSlide">
+            <header>
+                <div id="TitleContainer">
+                    <h3>Trivia Quiz</h3>
+                </div>
+            </header>
+
+            <div id="MainSection">
+                <div id="Instructions">
+                    <h3>Instructions</h3>
+                    <hr>
+                    <p>
+                        Welcome to the <span>trivia quiz!</span> You will be asked a series of questions,
+                        each with a <span>30-second</span> timer. If you don’t answer within the time limit,
+                        the quiz will automatically move to the next question, and it will be 
+                        counted as <span>unanswered</span>. For each correct answer, you’ll earn <span>one point</span>. 
+                        After selecting your answer, make sure to hit the <span>'Next'</span> button to 
+                        confirm it and proceed. At the end of the quiz, your <span>final score</span> will
+                        be displayed. 
+                        Good luck, and <span>have fun!</span>
+                    </p>
+                </div>
+
+                <button class="NextButton" type="button">Start</button>
+            </div>
+        </div>
+
+        <div class="Slide" id="SettingsSlide">
+            <div id="SettingsHeader">
+                <div id="SettingsTitleContainer">
+                    <h3>Settings</h3>
+                </div>
+            </div>  
+
+            <div id="SettingsSection">
+                <div id="SettingsDiv">
+                    <div class="Setting">
+                        <label for="QuestionCount">Number of Questions</label>
+                        <input type="number" id="QuestionCount" value="10" min="1" required>
+                    </div>
+
+                    <div class="Setting">
+                        <label for="Category">Select Category</label>
+                        <select id="Category">
+                            <option value="0">Any Category</option>
+                            <option value="9">General</option>
+                            <option value="11">Film</option>
+                            <option value="12">Music</option>
+                            <option value="18">Computers</option>
+                            <option value="21">Sports</option>
+
+                        </select>
+                    </div>
+
+                    <div class="Setting">
+                        <label for="Difficulty">Select Difficulty</label>
+                        <select id="Difficulty">
+                            <option value="0">Any Difficulty</option>
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button id="GenerateButton" type="submit">Generate Questions</button>
+            </div>
+        </div>
+
+        <script src="script.js">
+        </script>
+    </body>
+</html>
