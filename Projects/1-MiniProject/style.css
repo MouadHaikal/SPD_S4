@@ -18,6 +18,10 @@
     font-family: var(--mainFont);
 }
 
+html{
+    font-size: 1.6vh;
+}
+
 body {
     overflow: hidden; /* Prevents scrolling */
     touch-action: none; /* Prevents swipe scrolling */

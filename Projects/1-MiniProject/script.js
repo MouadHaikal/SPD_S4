@@ -60,29 +60,21 @@ function restart(){
 }
 
 window.addEventListener("load", ()=>{
-    slides[0].scrollIntoView({
-        behavior :"smooth",
-    });
-})
 
-let isScrolling = false;
-
-function lockScrollToCurrentSlide() {
-    const currentSlide = slides[currentIndex];
-
-    currentSlide.addEventListener("scroll", () => {
-        if (isScrolling) return;
-
-        const { scrollTop, scrollHeight, clientHeight } = currentSlide;
-        const isAtTop = scrollTop === 0;
-        const isAtBottom = scrollTop + clientHeight >= scrollHeight;
-
-        if (isAtTop || isAtBottom) {
-            isScrolling = true;
-            setTimeout(() => (isScrolling = false), 100); // Debounce to prevent rapid firing
-        }
-    });
-}
+    //void slides[0].offsetHeight;
+    //
+    //slides[0].scrollIntoView({
+    //    behavior: "smooth",
+    //    block: "start"
+    //});
+    //
+    setTimeout(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }, 250);
+});
 
 function nextSlide(){
     clearInterval(timerId);
@@ -123,14 +115,11 @@ function nextSlide(){
         } else{
             remarks.innerHTML = "Excellent job!"
         }
-
     }
 
     nextSlide.scrollIntoView({
         behavior : "smooth",
     });
-
-    lockScrollToCurrentSlide();
 
     // Handle clock
     if (currentIndex >= NQS && currentIndex != slides.length-1){
