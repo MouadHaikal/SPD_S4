@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <title>Manipulation de vue</title>
+        <style>
+            .hidden{
+                display: none;
+            }
+
+            #exo2{
+                display: flex;
+                justify-content: flex-start;
+                font-size: 1.5rem;
+                gap: 3px;
+            }
+
+            #exo2 > button{
+                font-size: 2rem;
+                width: 6em;
+                height: 2em;
+                padding: auto;
+            }
+
+            #exo2 > h3{
+                margin: auto 1em;
+            }
+
+            #exo3 > label{
+                margin-left: 2em;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="monapp">
+            <button @click="titre='Cliqué!'">{{ titre }}</button>
+
+            <hr>
+
+            <div id="exo2">
+                <button @click="compteur++">++</button>
+                <h3>{{ compteur }}</h3>
+                <button @click="compteur--">--</button>
+            </div>
+            
+            <hr>
+
+            <div id="exo3">
+                <input v-model="textInput" type="text" id="textInput" name="textInput">
+                <label for="textInput" :class="{ hidden: invalidInput }">Spaces are not allowed!</label>
+            </div>
+        </div>
+
+        <script>
+            const appli = {
+                computed:{
+                    invalidInput(){
+                        return !this.textInput.includes(" ");
+                    }
+                },
+                data () {
+                    return {
+                        titre: "Cliquez moi!",
+                        compteur: 0,
+                        textInput: ''
+                    }
+                }
+            };
+
+            Vue.createApp(appli).mount("#monapp");
+        </script>
+
+    </body>
+</html>

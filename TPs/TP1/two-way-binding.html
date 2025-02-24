@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <title>Manipulation de vue</title>
+
+        <style>
+            .redT{ color: red; }
+
+            .blueT{ color: blue; }
+
+            .hidden{ display: none; }
+
+            h3{
+                margin-top: 1em;
+            }
+
+            p{
+                max-width: 70ch;
+                font-size: 1.5rem;
+            }
+
+            #hidePDiv{
+                display: flex;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="monapp">
+            <ul>
+                <li>
+                    <h3>Couleur de la police:</h3>
+
+                    <label for="red">Rouge</label>
+                    <input type="radio" name="color" id="red" value="red" v-model="color">
+                    <br>
+                    <label for="blue">Bleu</label>
+                    <input type="radio" name="color" id="blue" value="blue" v-model="color">
+                </li>
+
+                <li>
+                    <div id="hidePDiv">
+                        <h3>Afficher/cacher le paragraphe?</h3>
+                        <input type="checkbox" name="hide" v-model="hide">
+                    </div>
+                </li>
+            </ul>
+
+            <p :class="{redT: color==='red', blueT: color==='blue', hidden: hide}">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Maecenas egestas facilisis arcu at rhoncus. 
+                Nullam placerat mattis nunc vitae commodo. 
+                Mauris rutrum porta sapien, vel eleifend odio interdum ut. 
+                Suspendisse scelerisque nunc est, a tincidunt erat viverra quis. 
+            </p>
+        </div>
+
+        <script>
+        const appli = {
+            data () {
+                return {
+                    color: '',
+                    hide: false,
+                }
+            }
+        };
+
+        Vue.createApp(appli).mount("#monapp");
+        </script>
+    </body>
+</html>
