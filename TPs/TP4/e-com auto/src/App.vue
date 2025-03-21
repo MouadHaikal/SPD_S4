@@ -1,8 +1,11 @@
-<script>
-</script>
-
 <template>
+    <div class="max-w-7xl mx-auto">
+        <Header title="Les Bonnes Pièces"/>
+        <MainSection/>
+    </div>
 </template>
 
-<style scoped>
-</style>
+<script setup>
+    import Header from './components/header/Header.vue'
+    import MainSection from './components/mainSection/MainSection.vue'
+</script>
