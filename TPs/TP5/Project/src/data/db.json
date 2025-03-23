@@ -1,0 +1,44 @@
+{
+  "jobs": [
+    {
+      "title": "Senior Software Engineer",
+      "description": "We are looking for a senior software engineer to develop and maintain high-quality software applications.  Experience with Vue.js is a plus.",
+      "salary": 150000,
+      "experience": 4,
+      "createdAt": "2025-03-23T02:50:42.034Z",
+      "id": "1"
+    },
+    {
+      "title": "Frontend Developer",
+      "description": "Join our team as a frontend developer and help us build amazing user interfaces using modern web technologies.",
+      "salary": 110000,
+      "experience": 4,
+      "createdAt": "2025-03-23T02:47:48.873Z",
+      "id": "2"
+    },
+    {
+      "id": "3",
+      "title": "Backend Developer",
+      "description": "Seeking a skilled backend developer to design, develop, and maintain server-side logic and APIs.",
+      "salary": 125000,
+      "createdAt": "2024-03-22",
+      "experience": 4
+    },
+    {
+      "id": "4",
+      "title": "Full Stack Developer",
+      "description": "We need a full stack developer to work on both the frontend and backend of our web applications.  Must be proficient in JavaScript, Node.js, and a modern frontend framework.",
+      "salary": 135000,
+      "createdAt": "2024-03-23",
+      "experience": 4
+    },
+    {
+      "id": "5",
+      "title": "Junior Software Developer",
+      "description": "Entry-level position for a junior software developer to learn and grow with our team.  Must have a strong understanding of programming concepts.",
+      "salary": 80000,
+      "createdAt": "2024-03-23",
+      "experience": 0
+    }
+  ]
+}

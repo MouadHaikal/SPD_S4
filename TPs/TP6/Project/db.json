@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "Getting Started with Vue 3 Composition API",
+      "body": "The Composition API is a set of APIs that allows you to write Vue components using imported functions instead of declaring options. It was introduced in Vue 3 and offers better TypeScript support, code organization, and reusability.\n\nOne of the main advantages of the Composition API is the ability to organize code by logical concerns rather than option types. This means you can group related code together, making it easier to understand and maintain components as they grow in complexity.\n\nHere's a simple example of a counter component using the Composition API:\n\n```js\nimport { ref } from 'vue'\n\nexport default {\n  setup() {\n    const count = ref(0)\n    \n    function increment() {\n      count.value++\n    }\n    \n    return {\n      count,\n      increment\n    }\n  }\n}\n```\n\nWith the <script setup> syntax, this becomes even more concise:\n\n```js\n<script setup>\nimport { ref } from 'vue'\n\nconst count = ref(0)\n\nfunction increment() {\n  count.value++\n}\n</script>\n```",
+      "tags": "vue, composition-api, javascript"
+    },
+    {
+      "id": "2",
+      "title": "Building Modern UI with Tailwind CSS",
+      "body": "Tailwind CSS is a utility-first CSS framework that allows you to build custom designs without ever leaving your HTML. Instead of pre-designed components like Bootstrap or Material UI, Tailwind provides low-level utility classes that let you build completely custom designs.\n\nThe main philosophy behind Tailwind is to give you the building blocks to create your own unique designs rather than imposing a specific visual style. This approach offers maximum flexibility and allows your designs to stand out from the crowd.\n\nHere's an example of a card component built with Tailwind:\n\n```html\n<div class=\"max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl\">\n  <div class=\"md:flex\">\n    <div class=\"md:shrink-0\">\n      <img class=\"h-48 w-full object-cover md:w-48\" src=\"/img/card-image.jpg\">\n    </div>\n    <div class=\"p-8\">\n      <div class=\"uppercase tracking-wide text-sm text-indigo-500 font-semibold\">Case study</div>\n      <a href=\"#\" class=\"block mt-1 text-lg leading-tight font-medium text-black hover:underline\">Finding customers for your new business</a>\n      <p class=\"mt-2 text-slate-500\">Getting a new business off the ground is a lot of hard work. Here are five ideas you can use to find your first customers.</p>\n    </div>\n  </div>\n</div>\n```\n\nWhile it might look verbose at first, the utility-based approach actually helps reduce your overall CSS size and avoids the need to come up with arbitrary class names.",
+      "tags": "tailwind, css, frontend"
+    },
+    {
+      "id": "3",
+      "title": "Managing State with Pinia in Vue 3",
+      "body": "Pinia is the official state management library for Vue, providing a simpler and more intuitive alternative to Vuex. It was designed with the Composition API in mind and offers excellent TypeScript support out of the box.\n\nPinia's core features include:\n\n1. **Intuitive API**: No more mutations, just actions and state\n2. **Devtools support**: Time travel debugging, state inspection\n3. **Hot module replacement**: Modify your stores without reloading\n4. **Plugin system**: Extend Pinia with plugins\n5. **Type support**: Automatic type inference with TypeScript\n\nHere's how to define a basic store with Pinia:\n\n```js\n// stores/counter.js\nimport { defineStore } from 'pinia'\n\nexport const useCounterStore = defineStore('counter', {\n  state: () => ({\n    count: 0,\n    name: 'Counter'\n  }),\n  getters: {\n    doubleCount: (state) => state.count * 2\n  },\n  actions: {\n    increment() {\n      this.count++\n    },\n    async fetchFromAPI() {\n      // You can do async operations here\n      const result = await fetch('/api/counter')\n      this.count = await result.json()\n    }\n  }\n})\n```\n\nAnd here's how to use it in a component:\n\n```js\n<script setup>\nimport { useCounterStore } from '@/stores/counter'\nimport { storeToRefs } from 'pinia'\n\nconst store = useCounterStore()\n\n// Destructure with storeToRefs to maintain reactivity\nconst { count, doubleCount } = storeToRefs(store)\n\nfunction increment() {\n  store.increment()\n}\n</script>\n```",
+      "tags": "vue, pinia, state-management"
+    }
+  ]
+}
